@@ -1,17 +1,20 @@
 ## Introduction
 
-An interop of the Firebase Cloud Messaging solution (JS) in dart.
-- You can retrieve the client's firebase token.
-- You can send push notification through Firebase.
+A dart plugin to use the Firebase Cloud Messaging API (JS) in dart.
 
 ## Setup
 
 For more information on how to setup FCM on the web: https://firebase.google.com/docs/cloud-messaging/js/client
 
+Add this key to the manifest.json 
 ```json
 {
   "gcm_sender_id": "SENDER_ID",
 }
+```
+and don't forger to add this inside your head tag (eg: index.html)
+```css
+<link rel="manifest" href="/manifest.json">
 ```
 
 - You need to add firebase-app and firebase-messaging to your web app. 
@@ -20,7 +23,9 @@ For more information on how to setup FCM on the web: https://firebase.google.com
 <html>
 <head>
 ...
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-messaging.js"></script>
 
     <script>
@@ -39,7 +44,7 @@ For more information on how to setup FCM on the web: https://firebase.google.com
     </head>
 ```
 
-- You need to create a file named 'firebase-messaging-sw.js' (Just create an empty file if you do ot want notification when your web app is closed)
+- You need to create a file named 'firebase-messaging-sw.js' (Just create an empty file if you do not want to receive notification when your web app is closed)
 
 ```js
 importScripts('https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js');
@@ -82,6 +87,8 @@ main() {
 }
 ```
 
+There is a complete example in the example tab.
+
 ## License
 
 Apache License 2.0 [(link)]
@@ -91,5 +98,3 @@ Apache License 2.0 [(link)]
 ## Features and bugs
 
 Please send feature requests and bugs to my mail address !
-
-This is my first plugin so :D ... 

@@ -1,7 +1,7 @@
 name: firebase_cloud_messaging_interop
-description: A dart plugin allowing you to retrieve the firebase token of the client and to send push notification (via firebase).
+description: A dart plugin to use the Firebase Cloud Messaging Api
 
-version: 1.0.1
+version: 1.1.0
 repository: https://github.com/GaspardMerten/Firebase-Cloud-Messaging-Interop
 homepage: https://github.com/GaspardMerten/Firebase-Cloud-Messaging-Interop
 author: Gaspard Merten <gaspard.mp.work@gmail.com>
