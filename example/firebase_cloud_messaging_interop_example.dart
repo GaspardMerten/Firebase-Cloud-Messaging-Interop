@@ -14,7 +14,7 @@ main() {
       }));
     }
     else {
-      /// User does'nt want notification :(
+      /// User doesn't want notification :(
     }
   });
 }
