@@ -1,5 +1,5 @@
 name: firebase_cloud_messaging_interop
-description: A dart plugin to use the Firebase Cloud Messaging Api. You can retrieve the user's FCM token, delete it, access the notification data, ...
+description: A dart plugin to use the Firebase Cloud Messaging Api (JS). You can retrieve the user's FCM token, delete it, access the notification data, ...
 
 version: 1.1.1
 repository: https://github.com/GaspardMerten/Firebase-Cloud-Messaging-Interop
@@ -11,6 +11,3 @@ environment:
 
 dependencies:
   js: ^0.6.0
-
-dev_dependencies:
-  test: ^1.0.0

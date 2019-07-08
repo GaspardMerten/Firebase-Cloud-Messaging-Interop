@@ -1,4 +1,4 @@
-A dart plugin to use the Firebase Cloud Messaging API (JS) in dart.
+A dart plugin to use the Firebase Cloud Messaging Api (JS). You can retrieve the user's FCM token, delete it, access the notification data, ...
 
 ## Setup
 
