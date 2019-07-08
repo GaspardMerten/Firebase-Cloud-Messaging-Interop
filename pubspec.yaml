@@ -3,6 +3,7 @@ description: A dart plugin allowing you to retrieve the firebase token of the cl
 
 version: 1.0.0
 repository: https://github.com/GaspardMerten/Firebase-Cloud-Messaging-Interop
+homepage: https://github.com/GaspardMerten/Firebase-Cloud-Messaging-Interop
 author: Gaspard Merten <gaspard.mp.work@gmail.com>
 
 environment:

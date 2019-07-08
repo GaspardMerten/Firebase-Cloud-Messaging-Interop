@@ -7,8 +7,8 @@ import 'package:js/js.dart';
 
 Future futureFromPromise(Promise<String> p) {
   final completer = Completer<String>();
-  p.then(allowInterop(completer.complete),
-      allowInterop(completer.completeError));
+  p.then(
+      allowInterop(completer.complete), allowInterop(completer.completeError));
   return completer.future;
 }
 
@@ -18,9 +18,9 @@ external Firebase get firebase;
 @JS()
 class Firebase {
   external Firebase();
+
   external Messaging messaging();
 }
-
 
 @JS()
 class Messaging {
@@ -34,6 +34,7 @@ class Messaging {
 @JS()
 class Promise<T> {
   external Promise(void executor(void resolve(T result), Function reject));
+
   external Promise then(void onFulfilled(T result), [Function onRejected]);
 }
 
