@@ -1,9 +1,9 @@
 @JS()
+
 /// Interop for the FCM js api.
 library main;
 
 import 'package:js/js.dart';
-
 
 @JS()
 external Firebase get firebase;
@@ -33,7 +33,6 @@ class Messaging {
   external FnCallbackMessage get onMessage;
 }
 
-
 @JS()
 class Promise<T> {
   external Promise(void executor(void resolve(T result), Function reject));
@@ -56,4 +55,3 @@ class Notification {
 
   external String get tag;
 }
-

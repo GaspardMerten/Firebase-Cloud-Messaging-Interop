@@ -8,9 +8,7 @@ Future futureFromPromise<T>(Promise<T> p) {
   final completer = Completer<T>();
 
   p.then(
-      allowInterop(completer.complete),
-      allowInterop(completer.completeError)
-  );
+      allowInterop(completer.complete), allowInterop(completer.completeError));
 
   return completer.future;
 }

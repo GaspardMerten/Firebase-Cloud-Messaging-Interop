@@ -1,7 +1,6 @@
 import 'package:firebase_cloud_messaging_interop/firebase_cloud_messaging_interop.dart';
 import 'dart:html';
 
-
 class FCMService {
   FCM fcm;
 
@@ -18,20 +17,18 @@ class FCMService {
   }
 
   void requestPermissionAndGetToken() {
-
     Notification.requestPermission().then((permission) {
       if (permission == 'granted') {
         fcm.getToken().then((e) {
           currentToken = e;
+
           /// SEND TOKEN TO THE BACKEND SERVER
         });
-      }
-      else {
+      } else {
         /// The user doesn't want notification :(
       }
     });
   }
 
   void deleteCurrentToken() => fcm.deleteToken(currentToken);
-
 }
