@@ -1,3 +1,8 @@
+## 1.2.0
+
+- The whole FCM payload can now be retrieved `notification, data, from` instead of only the `notification` object.
+- Fixes for sending Dart function to JS
+
 ## 1.1.0
 
 - Fixing multiple issues.

@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:firebase_cloud_messaging_interop/src/fcm_interop.dart';
 import 'package:firebase_cloud_messaging_interop/src/js_to_dart_helper.dart';
 
@@ -28,9 +30,9 @@ class FCM {
   void onTokenRefresh(Function() callBack) =>
       _messaging.onTokenRefresh(callBack);
 
-  /// Adding a callback allowing to retrieve the notification data ([Notification]).
-  void onMessage(Function(Notification notification) callBack) =>
-      _messaging.onMessage((Message e) => callBack((e.notification)));
+  /// Adding a callback allowing to retrieve the FCM payload
+  void onMessage(Function(Map message) callBack) =>
+      _messaging.onMessage(allowInterop((Map e) => callBack((toDartMap(e)))));
 
   /// Delete the current FCM token.
   Future<bool> deleteToken(String token) =>
