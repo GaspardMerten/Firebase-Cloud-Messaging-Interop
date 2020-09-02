@@ -28,7 +28,7 @@ class FCM {
 
   /// Adding a callback allowing to retrieve the new token after it was refreshed.
   void onTokenRefresh(Function() callBack) =>
-      _messaging.onTokenRefresh(callBack);
+      _messaging.onTokenRefresh(allowInterop(() => callBack()));
 
   /// Adding a callback allowing to retrieve the FCM payload
   void onMessage(Function(Map message) callBack) =>
