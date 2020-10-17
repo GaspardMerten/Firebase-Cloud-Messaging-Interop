@@ -17,7 +17,7 @@ class Firebase {
 
 typedef FnStr = Function(String str);
 typedef FnCallback = Function(Function callBack);
-typedef FnCallbackMessage = Function(Function(Map message) callBack);
+typedef FnCallbackMessage = Function(Function(dynamic data) callBack);
 typedef Promise<T> FnReturningPromise<T>([arg]);
 
 @JS()

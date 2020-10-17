@@ -32,7 +32,7 @@ class FCM {
 
   /// Adding a callback allowing to retrieve the FCM payload
   void onMessage(Function(Map message) callBack) =>
-      _messaging.onMessage(allowInterop((Map e) => callBack((toDartMap(e)))));
+      _messaging.onMessage(allowInterop((e) => callBack((toDartMap(e)))));
 
   /// Delete the current FCM token.
   Future<bool> deleteToken(String token) =>
