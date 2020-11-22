@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Improving README.md
+
 ## 2.0.0
 
 - Breaking changes: the FCM class has become FirebaseMessagingWeb

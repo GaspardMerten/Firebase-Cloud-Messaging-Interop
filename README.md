@@ -39,7 +39,7 @@ Add the firebase-app and firebase-messaging js libraries to your project (inside
 
 Then init the default firebase app (just below the previous lines).
 
-If you want to deffer the initialization of the firebase app please refer to the previously mentioned link.
+If you want to defer the initialization of the firebase app, please refer to the previously mentioned link.
 
 ```html
     <script>
@@ -59,7 +59,7 @@ If you want to deffer the initialization of the firebase app please refer to the
 
 #### Step 3
 
-This last step will allow your browser to receive notification while your app is running in the background/closed.
+This last step will allow your browser to receive a notification while your app is running in the background/closed.
 
 Start by creating a file named 'firebase-messaging-sw.js' (your_project/web/firebase-messaging-sw.js).
 
@@ -145,7 +145,7 @@ fcm.onMessage((Map messagePayload) {
 ```
 
 <b>Important note: </b> You can't directly subscribe to a topic with this plugin. You will need to make a call
-to firebase from your server with the user token to do so.
+to Firebase from your server with the user token to do so.
 
 ## License
 
@@ -155,4 +155,4 @@ Apache License 2.0 [(link)]
 
 ## Issues & Feedback
 
-Please send feature requests,bugs and feedbacks to my mail address !
+Please send feature requests, bugs and feedback to my mail address!
