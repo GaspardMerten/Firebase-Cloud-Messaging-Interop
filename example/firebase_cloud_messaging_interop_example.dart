@@ -1,34 +1,35 @@
 import 'package:firebase_cloud_messaging_interop/firebase_cloud_messaging_interop.dart';
-import 'dart:html';
 
-class FCMService {
-  FCM fcm;
+class NotificationService {
+  NotificationService() {
+    // Direct init
+    fcm = FirebaseMessagingWeb(publicVapidKey: 'YourPublicVapidKey');
+
+    // Deferred init
+    fcm = FirebaseMessagingWeb();
+    fcm.init('YourPublicVapidKey');
+
+    /// Setup callback for whenever a notification is received.
+    /// The app must be open inside the navigator for this callback to fire.
+    fcm.onMessage((Map notificationData) {
+      // do something with notification data
+    });
+
+    /// Whenever the token is refreshed,
+    fcm.onTokenRefresh(() async {
+      final String token = await fcm.getToken();
+
+      // push token to server
+    });
+  }
+
+  FirebaseMessagingWeb fcm;
 
   String currentToken;
 
-  FCMService() {
-    fcm = FCM(publicVapidKey: "YourPublicVapidKey");
+  /// Ask user for permission
+  Future<bool> getPermission() => fcm.requestNotificationPermissions();
 
-    fcm.onMessage((e) {
-      /// You can access title, body and tag
-    });
-
-    fcm.onTokenRefresh(requestPermissionAndGetToken);
-  }
-
-  void requestPermissionAndGetToken() {
-    Notification.requestPermission().then((permission) {
-      if (permission == 'granted') {
-        fcm.getToken().then((e) {
-          currentToken = e;
-
-          /// SEND TOKEN TO THE BACKEND SERVER
-        });
-      } else {
-        /// The user doesn't want notification :(
-      }
-    });
-  }
-
+  /// Delete current user token
   void deleteCurrentToken() => fcm.deleteToken(currentToken);
 }

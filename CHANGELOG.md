@@ -1,3 +1,10 @@
+## 2.0.0
+
+- Breaking changes: the FCM class has become FirebaseMessagingWeb
+
+- Fixing the onMessage interop.
+- Including the requestNotificationMethod inside the FCM interface.
+
 ## 1.2.1
 
 - Fixing type conversion issue for FCM payload retrieval 

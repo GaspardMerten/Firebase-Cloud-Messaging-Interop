@@ -18,7 +18,7 @@ class Firebase {
 typedef FnStr = Function(String str);
 typedef FnCallback = Function(Function callBack);
 typedef FnCallbackMessage = Function(Function(dynamic data) callBack);
-typedef Promise<T> FnReturningPromise<T>([arg]);
+typedef FnReturningPromise<T> = Promise<T> Function([dynamic arg]);
 
 @JS()
 class Messaging {
@@ -37,7 +37,7 @@ class Messaging {
 class Promise<T> {
   external Promise(void executor(void resolve(T result), Function reject));
 
-  external Promise then(void onFulfilled(T result), [Function onRejected]);
+  external Promise<T> then(void onFulfilled(T result), [Function onRejected]);
 }
 
 @anonymous
