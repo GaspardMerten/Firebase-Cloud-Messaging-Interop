@@ -11,8 +11,8 @@ class NotificationService {
 
     /// Setup callback for whenever a notification is received.
     /// The app must be open inside the navigator for this callback to fire.
-    fcm.onMessage((Map notificationData) {
-      // do something with notification data
+    fcm.onMessage((Map? notificationData) {
+      print(notificationData);
     });
 
     /// Whenever the token is refreshed,
@@ -20,12 +20,13 @@ class NotificationService {
       final String token = await fcm.getToken();
 
       // push token to server
+      print(token);
     });
   }
 
-  FirebaseMessagingWeb fcm;
+  late FirebaseMessagingWeb fcm;
 
-  String currentToken;
+  String? currentToken;
 
   /// Ask user for permission
   Future<bool> getPermission() => fcm.requestNotificationPermissions();

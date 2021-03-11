@@ -1,3 +1,8 @@
+## 3.0.0
+
+- Migrating to null-safety
+- Adding an example project
+
 ## 2.0.1
 
 - Improving README.md

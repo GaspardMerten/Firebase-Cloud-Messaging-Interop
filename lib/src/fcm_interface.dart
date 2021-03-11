@@ -11,17 +11,17 @@ class FirebaseMessagingWeb {
   /// If the [publicVapidKey] is specified, the init function will be call in
   /// the constructor. If not, then the init method should be called before using
   /// any other function related to [FCM]
-  FirebaseMessagingWeb({String publicVapidKey}) {
+  FirebaseMessagingWeb({String? publicVapidKey}) {
     if (publicVapidKey != null) {
       init(publicVapidKey);
     }
   }
 
-  Messaging _messaging;
+  late Messaging _messaging;
 
   /// Initiates Firebase Messaging and set the [publicVapidKey].
   void init(String publicVapidKey) {
-    if (publicVapidKey == null || publicVapidKey.isEmpty) {
+    if (publicVapidKey.isEmpty) {
       throw const FormatException(
           'The publicVapidKey can not be null nor can it be an empty string !');
     }
@@ -36,10 +36,10 @@ class FirebaseMessagingWeb {
       _messaging.onTokenRefresh(allowInterop(() => callBack()));
 
   /// Adds a callback allowing to retrieve the FCM payload
-  void onMessage(Function(Map<String, dynamic> message) callBack) {
+  void onMessage(Function(Map<String, dynamic>? message) callBack) {
     _messaging.onMessage(allowInterop((dynamic jsMessageObject) {
       return callBack(
-          jsonDecode(stringify(jsMessageObject)) as Map<String, dynamic>);
+          jsonDecode(stringify(jsMessageObject)) as Map<String, dynamic>?);
     }));
   }
 
@@ -51,7 +51,7 @@ class FirebaseMessagingWeb {
   }
 
   /// Deletes the current FCM token.
-  Future<bool> deleteToken(String token) =>
+  Future<bool> deleteToken(String? token) =>
       futureFromPromise<bool>(_messaging.deleteToken(token));
 
   /// Retrieves the client FCM token. (The client must first ask for the permission [requestNotificationPermissions])
